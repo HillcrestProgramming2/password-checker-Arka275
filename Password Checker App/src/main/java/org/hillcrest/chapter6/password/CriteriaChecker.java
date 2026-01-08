@@ -2,13 +2,12 @@ package org.hillcrest.chapter6.password;
 
 public class CriteriaChecker {
 
-    public static String evaluateCriteria(String password){
+    public static int evaluateCriteria(String password) {
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwuxyz";
-        String upperCaseLetters= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String number = "1234567890";
         String special = "!@#$%^&*()-+=";
         int score = 0;
-        String strength = "";
         boolean hasUpper = false;
         boolean hasLower = false;
         boolean hasNumber = false;
@@ -19,18 +18,18 @@ public class CriteriaChecker {
             score++;
         }
 
-        for (int i = 0;i < password.length(); i++) {
+        for (int i = 0; i < password.length(); i++) {
 
-            if (upperCaseLetters.contains(password.substring(i, i+1))) {
-                    hasUpper = true;
-                }
-            if (lowerCaseLetters.contains(password.substring(i, i+1))) {
+            if (upperCaseLetters.contains(password.substring(i, i + 1))) {
+                hasUpper = true;
+            }
+            if (lowerCaseLetters.contains(password.substring(i, i + 1))) {
                 hasLower = true;
             }
-            if (number.contains(password.substring(i, i+1))) {
+            if (number.contains(password.substring(i, i + 1))) {
                 hasNumber = true;
             }
-            if (special.contains(password.substring(i, i+1))) {
+            if (special.contains(password.substring(i, i + 1))) {
                 hasSpecial = true;
             }
 
@@ -48,17 +47,21 @@ public class CriteriaChecker {
         if (hasSpecial) {
             score++;
         }
-        if (score >= 0 && score <= 2){
-            strength = "Weak";
-        }
-        if (score == 3){
-            strength = "Moderate";
-        }
-        if (score == 4 || score == 5){
-            strength = "Strong";
-        }
+        return score;
+    }
+        public static String determineStrength ( int score){
+            String strength = "";
+            if (score >= 0 && score <= 2) {
+                strength = "Weak";
+            }
+            if (score == 3) {
+                strength = "Moderate";
+            }
+            if (score == 4 || score == 5) {
+                strength = "Strong";
+            }
 
-        return strength;
+            return strength;
 
         }
 
