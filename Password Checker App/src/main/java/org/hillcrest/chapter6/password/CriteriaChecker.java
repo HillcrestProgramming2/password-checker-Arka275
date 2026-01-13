@@ -48,7 +48,9 @@ public class CriteriaChecker {
             score++;
         }
         return score;
+
     }
+
         public static String determineStrength ( int score){
             String strength = "";
             if (score >= 0 && score <= 2) {
