@@ -1,9 +1,15 @@
 package org.hillcrest.chapter6.password;
 import java.util.Scanner;
 
-
+/**
+ * Main application class for the Password Strength Checker.
+ */
 public class PasswordCheckerApp {
-    //main method goes here
+    /**
+     * Application entry point.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

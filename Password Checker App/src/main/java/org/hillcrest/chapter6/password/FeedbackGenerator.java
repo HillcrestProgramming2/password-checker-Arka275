@@ -1,7 +1,14 @@
 package org.hillcrest.chapter6.password;
-
+/**
+ * Utility class that generates feedback for improving a password.
+ */
 public class FeedbackGenerator {
-    //utility class for generating feedback based on password
+    /**
+     * Generates feedback based on failed password criteria.
+     *
+     * @param password the password to analyze
+     * @return feedback string with suggestions
+     */
     public static String generateFeedback(String password){
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwuxyz";
         String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

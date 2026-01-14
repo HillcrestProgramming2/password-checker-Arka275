@@ -1,7 +1,14 @@
 package org.hillcrest.chapter6.password;
-
+/**
+ * Utility class that evaluates a password against strength criteria.
+ */
 public class CriteriaChecker {
-
+/**
+ * Evaluates how many password criteria are met.
+ *
+ * @param password the password to evaluate
+ * @return score from (0-5) based on criteria met
+ */
     public static int evaluateCriteria(String password) {
         String lowerCaseLetters = "abcdefghijklmnopqrstuvwuxyz";
         String upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -12,7 +19,6 @@ public class CriteriaChecker {
         boolean hasLower = false;
         boolean hasNumber = false;
         boolean hasSpecial = false;
-
 
         if (password.length() >= 8) {
             score++;
@@ -50,7 +56,12 @@ public class CriteriaChecker {
         return score;
 
     }
-
+    /**
+    * Determines password strength label from score.
+            *
+            * @param score number of criteria met
+     * @return strength label
+     */
         public static String determineStrength ( int score){
             String strength = "";
             if (score >= 0 && score <= 2) {
